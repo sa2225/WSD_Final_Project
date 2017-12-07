@@ -1,4 +1,4 @@
-<?php
+  <?php
 final class account extends \database\model
 {
     public $id;
@@ -29,17 +29,9 @@ final class account extends \database\model
         return $password;
     }
     public function checkPassword($LoginPassword) {
-        return password_verify($LoginPassword, $this->password);
-    }
-    public function validate()
-    {
-        $valid = TRUE;
-        echo 'myemail: ' . $this->email;
-        if($this->email == '') {
-            $valid = FALSE;
-            echo 'nothing in email';
-        }
-        return $valid;
+        $checkpwd=password_verify($LoginPassword, $this->LoginPassword);
+        return $checkpwd;
+    
     }
 }
 ?>
