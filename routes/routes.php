@@ -31,27 +31,23 @@ class routes
         $route->method = 'create';
         $routes[] = $route;
         
-        //This is an examole of the post for tasks to show a task
-        //GET METHOD index.php?page=tasks&action=show
+        //post for a new user
         $route = new route();
-        $route->http_method = 'GET';
-        $route->action = 'show';
-        $route->page = 'tasks';
-        $route->controller = 'tasksController';
-        $route->method = 'show';
+        $route->http_method = 'POST';
+        $route->action = 'signup';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'signup';
         $routes[] = $route;
-        //This is an examole of the post for tasks to list tasks.  See the action matches the method name.
-        //you need to add routes for create, edit, and delete
-        //GET METHOD index.php?page=tasks&action=all
+        //Registering a new user
         $route = new route();
-        $route->http_method = 'GET';
-        $route->action = 'all';
-        $route->page = 'tasks';
-        $route->controller = 'tasksController';
-        $route->method = 'all';
+        $route->http_method = 'POST';
+        $route->action = 'register';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'register';
         $routes[] = $route;
         //GET METHOD index.php?page=accounts&action=all
-//https://web.njit.edu/~kwilliam/mvc/index.php?page=accounts&action=all
         $route = new route();
         $route->http_method = 'GET';
         $route->action = 'all';
@@ -75,6 +71,14 @@ class routes
         $route->page = 'accounts';
         $route->controller = 'accountsController';
         $route->method = 'login';
+        $routes[] = $route;
+        //GET METHOD
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action= 'logout';
+        $route->page= 'accounts'
+        $route->controller = 'accountsController';
+        $route->method = 'logout';
         $routes[] = $route;
         //YOU WILL NEED TO ADD MORE ROUTES
         $route = new route();
