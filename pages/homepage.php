@@ -20,7 +20,7 @@
 <h1>
     <?php
     //this how to print some data;
-    echo $data['site_name'];
+    //echo $data['site_name'];
     ?> </h1>
 
   <!--<h1><a href="index.php?page=accounts&action=all">Show All Accounts</a></h1>
@@ -46,15 +46,8 @@
 <form>
 
 <form action="index.php?page=accounts&action=signup" method="POST">
-
-
-
     <div align="center" class="container">
-
-
-
         <label><b>Are you a new user?</b></label><button type="submit">Signup</button>
-
     </div>
 </form>
 
