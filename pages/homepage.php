@@ -53,7 +53,7 @@
 
 
 
-        <label><b>Not a member yet?</b></label><button type="submit">Signup</button>
+        <label><b>Are you a new user?</b></label><button type="submit">Signup</button>
 
     </div>
 
