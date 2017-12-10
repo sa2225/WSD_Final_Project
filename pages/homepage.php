@@ -43,6 +43,26 @@
 <h1><a href="index.php?page=accounts&action=register">Register</a></h1>
 
 
+</form>
+
+<form action="index.php?page=accounts&action=signup" method="POST">
+
+
+
+    <div class="container">
+
+
+
+        <label><b>Not a member yet?</b></label><button type="submit">Signup</button>
+
+    </div>
+
+
+
+
+
+</form>
+
 <script src="js/scripts.js"></script>
 </body>
 </html>
