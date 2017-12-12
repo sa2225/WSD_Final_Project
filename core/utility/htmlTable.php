@@ -45,5 +45,57 @@ class htmlTable
         $tableGen .= '</tr></table><hr>';
         return $tableGen;
     }
+
+    public static function generateTableForOneTodo($tableData)
+
+    {
+
+        $tableGen = '<table border="1"cellpadding="10"><tr>';
+
+        $tableGen .= '<tr><td>Id</td><td>'.$tableData->id.'</td></tr>';
+
+        $tableGen .= '<tr><td>Owner Email</td><td>'.$tableData->owneremail.'</td></tr>';
+
+        $tableGen .= '<tr><td>Owner Id</td><td>'.$tableData->ownerid.'</td></tr>';
+
+        $tableGen .= '<tr><td>Created Date</td><td>'.$tableData->createddate.'</td></tr>';
+
+        $tableGen .= '<tr><td>Due Date</td><td>'.$tableData->duedate.'</td></tr>';
+
+        $tableGen .= '<tr><td>Message</td><td>'.$tableData->message.'</td></tr>';
+
+        $tableGen .= '<tr><td>Is Done</td><td>'.$tableData->isdone.'</td>';
+
+        $tableGen .= '</tr></table><hr>';
+
+        return $tableGen;
+
+    }
+
+    public static function generateTableForOneAccount($tableData)
+
+    {
+
+        $tableGen = '<table border="1"cellpadding="10"><tr>';
+
+        $tableGen .= '<tr><td>Id</td><td>'.$tableData->id.'</td></tr>';
+
+        $tableGen .= '<tr><td>Email</td><td>'.$tableData->email.'</td></tr>';
+
+        $tableGen .= '<tr><td>First Name</td><td>'.$tableData->fname.'</td></tr>';
+
+        $tableGen .= '<tr><td>Last Name</td><td>'.$tableData->lname.'</td></tr>';
+
+        $tableGen .= '<tr><td>Phone</td><td>'.$tableData->phone.'</td></tr>';
+
+        $tableGen .= '<tr><td>Birthday</td><td>'.$tableData->birthday.'</td></tr>';
+
+        $tableGen .= '<tr><td>Gender</td><td>'.$tableData->gender.'</td>';
+
+        $tableGen .= '</tr></table><hr>';
+
+        return $tableGen;
+
+    }
 }
 ?>
