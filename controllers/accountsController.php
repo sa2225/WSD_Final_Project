@@ -252,7 +252,7 @@ class accountsController extends http\controller
 
             //header('Location: index.php');
 
-            echo 'user not found';
+            echo 'User not found';
 
         } else {
 
