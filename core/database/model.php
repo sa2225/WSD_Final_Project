@@ -1,6 +1,5 @@
 <?php
 namespace database;
-use http\controller;
 abstract class model
 {
     public function save()
