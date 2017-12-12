@@ -9,7 +9,7 @@ class todos extends database\collection
         $sql = 'SELECT * FROM ' . $tableName . ' WHERE ownerid ="' . $userid.'"';
         echo $sql;
         //grab the only record for find one and return as an object
-        $recordsSet = self::getResults($sql, $userid);
+        $recordsSet = self::getResults($sql);
         return $recordsSet;
     }
 }
