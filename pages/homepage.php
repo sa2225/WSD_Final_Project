@@ -5,7 +5,11 @@
     <meta charset="utf-8">
 
     <title>LOGIN</title>
-    
+    <meta name="description" content="Homepage-My Final Project: ">
+
+    <meta name="author" content="Saniya Anand">
+
+
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
 
