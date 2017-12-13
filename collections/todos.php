@@ -7,7 +7,7 @@ class todos extends database\collection
     public static  function findTasksbyID($userid) {
         $tableName = get_called_class();
         $sql = 'SELECT * FROM ' . $tableName . ' WHERE ownerid ="' . $userid.'"';
-        echo $sql;
+        //echo $sql;
         //grab the only record for find one and return as an object
         $recordsSet = self::getResults($sql);
         return $recordsSet;
