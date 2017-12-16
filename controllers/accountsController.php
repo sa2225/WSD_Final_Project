@@ -210,7 +210,7 @@ class accountsController extends http\controller
 
         }else{
 
-            echo 'Wrong password entered.';
+            echo 'Incorrect password entered.';
 
         }
 
@@ -238,27 +238,25 @@ class accountsController extends http\controller
 
         $record = new account();
 
+        $record = accounts::findUserbyUsername($_POST['login']);
 
+        //$checkpsw = accounts::checkPassword($_POST['psw'],$record->password);
 
-        $record = accounts::findUserbyUsername($_POST['uname']);
+        //print_r($record);
 
-        //$checkpwd = accounts::checkPassword($_POST['pwd'],$record->password);
-
-        print_r($record);
-
-        echo '1';
+        //echo '1';
 
         if ($record == FALSE) {
 
             //header('Location: index.php');
 
-            echo 'User not found';
+            print_r("<h2>'Sorry! This user is not found'</h2>");
 
         } else {
 
-            if($record->checkPassword($_POST['pwd']) == TRUE) {
+            if($record->checkPassword($_POST['psw']) == TRUE) {
 
-                echo 'login';
+                //echo 'login';
 
                 session_start();
 
@@ -274,13 +272,11 @@ class accountsController extends http\controller
 
                 //header('Location: index.php');
 
-                echo 'Password is incorrect';
+                print_r("<h2>'Sorry! You have entered incorrect password'</h2>");
 
             }
 
         }
-
-
 
     }
 
