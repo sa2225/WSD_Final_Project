@@ -9,7 +9,7 @@ abstract class model
 
             $sql = $this->update();
 
-			      $INSERT=FALSE;
+			$INSERT=FALSE;
 
         } else {
 
