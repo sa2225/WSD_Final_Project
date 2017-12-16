@@ -29,8 +29,9 @@ final class account extends \database\model
         return $password;
     }
     public function checkPassword($LoginPassword) {
-        $checkpwd=password_verify($LoginPassword, $this->LoginPassword);
-        return $checkpwd;
+        $checkpsw=password_verify($LoginPassword, $this->LoginPassword);
+        print_r($checkpsw);
+        return $checkpsw;
     
     }
 }
