@@ -1,20 +1,11 @@
 <!doctype html>
-
-
-
 <html lang="en">
 
 <head>
 
     <meta charset="utf-8">
-
-
-
-    <title>My Final Project</title>
-
-
-
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
+	<title>My Final Project</title>
+	<link rel="stylesheet" href="css/styles.css?v=1.0">
 
 
 
@@ -25,27 +16,16 @@
     <![endif]-->
 
 </head>
-
-
-
 <body>
-
-
 
 <?php
 
 //this is how you print something
 
 //print_r($data);
-
 print utility\htmlTable::genarateTableFromMultiArray($data);
 
 ?>
-
-
-
-
-
 <script src="js/scripts.js"></script>
 
 </body>
