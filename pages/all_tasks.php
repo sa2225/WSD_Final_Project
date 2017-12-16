@@ -10,7 +10,7 @@
 
 
 
-    <title>My WSD Project</title>
+    <title>My Final Project</title>
 
 
 
