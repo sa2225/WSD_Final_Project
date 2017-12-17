@@ -1,60 +1,188 @@
-<!doctype html>
+<!DOCTYPE html>
 
-<html lang="en">
-<head>
+<html>
+
+  <head>
+
     <meta charset="utf-8">
 
-    <title>LOGIN</title>
-    <meta name="description" content="Homepage-My Final Project: ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <meta name="author" content="Saniya Anand">
+    <title>WSD Project - FALL2017</title>
+
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="robots" content="all,follow">
+
+    <!-- Bootstrap CSS-->
+
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+
+    <!-- Fontastic Custom icon font-->
+
+    <link rel="stylesheet" href="css/fontastic.css">
+
+    <!-- Font Awesome CSS-->
+
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+
+    <!-- Google fonts - Poppins -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+
+    <!-- theme stylesheet-->
+
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+
+    <!-- Custom stylesheet - for your changes-->
+
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Favicon-->
+
+    <link rel="shortcut icon" href="favicon.png">
+
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="page login-page">
+
+      <div class="container d-flex align-items-center">
+
+        <div class="form-holder has-shadow">
+
+          <div class="row">
+
+            <!-- Logo & Information Panel-->
+
+            <div class="col-lg-6">
+
+              <div class="info d-flex align-items-center">
+
+                <div class="content">
+
+                  <div class="logo">
+
+                    <h1>WSD: Ultimate Tasker</h1>
+                    <br><br><br>
+                    <marquee><h3>Made by Saniya Anand</h3></marquee>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Form Panel    -->
+
+            <div class="col-lg-6 bg-white">
+
+              <div class="form d-flex align-items-center">
+
+                <div class="content">
+
+                  <form id="login-form" action="index.php?page=accounts&action=login" method="post">
+
+                    <div class="form-group">
+
+                      <input id="login-username" type="text" name="login" required="" class="input-material">
+
+                      <label for="login-username" class="label-material">Email</label>
+
+                    </div>
+
+                    <div class="form-group">
+
+                      <input id="login-password" type="password" name="psw" required="" class="input-material">
+
+                      <label for="login-password" class="label-material">Password</label>
+
+                    </div>
+
+                    <p id="login" class="login"><input type="submit" name="commit" value="Login"></p>
+
+                    <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+
+                  </form>
 
 
 
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
+                  <form id="login-form" action="index.php?page=accounts&action=signup" method="post">
 
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
-</head>
+                    <small>Do not have an account? </small><p id="login" class="signup"><input type="submit" name="commit" value="Signup"></p></div>
 
-<body>
+                    <!-- This should be submit button but I replaced it with <a> for demo purposes-->
 
+                  </form>
 
-<h1>
-    <?php
-    //this how to print some data;
-    //echo $data['site_name'];
-    ?> </h1>
+                </div>
 
-  <!--<h1><a href="index.php?page=accounts&action=all">Show All Accounts</a></h1>
-  <h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>-->
+              </div>
 
+            </div>
 
-<form action="index.php?page=accounts&action=login" method="POST">
+          </div>
 
-    <div align= "center" class="container">
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required><br><br>
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="pwd" required><br><br>
+        </div>
 
-        <button type="submit">Login</button><br><br>
+      </div>
+
     </div>
 
-</form>
 
-<!--<h1><a href="index.php?page=accounts&action=register">Register</a></h1>-->
+    <div id="style-switch" class="collapse">
 
+      <h4 class="mb-3">Select theme colour</h4>
 
-<form>
+      <form class="mb-3">
 
-<form action="index.php?page=accounts&action=signup" method="POST">
-    <div align="center" class="container">
-        <label><b>Are you a new user?</b></label><button type="submit">Signup</button>
+        <select name="colour" id="colour" class="form-control">
+
+          <option value="">select colour variant</option>
+
+          <option value="default">violet</option>
+
+          <option value="pink">pink</option>
+
+          <option value="red">red</option>
+
+          <option value="green">green</option>
+
+          <option value="sea">sea</option>
+
+          <option value="blue">blue</option>
+
+        </select>
+
+      </form>
+
     </div>
-</form>
 
-<script src="js/scripts.js"></script>
-</body>
+    <!-- Javascript files-->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+
+    <script src="js/front.js"></script>
+
+  </body>
+
 </html>

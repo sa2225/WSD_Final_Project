@@ -31,11 +31,14 @@ class accounts extends \database\collection
         } else {
 
 
+
             echo "True";
 
             return $recordsSet[0];
 
         }
+
+        //return $recordsSet[0];
 
     }
 

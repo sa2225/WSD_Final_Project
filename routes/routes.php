@@ -1,5 +1,17 @@
 <?php
 
+/**
+
+ * Created by PhpStorm.
+
+ * User: kwilliams
+
+ * Date: 11/27/17
+
+ * Time: 5:25 PM
+
+ */
+
 class routes
 
 {
@@ -32,7 +44,7 @@ class routes
 
         //this is the index.php route for POST
 
-        //This is an example of the post for index
+        //This is an examole of the post for index
 
         $route = new route();
 
@@ -66,7 +78,7 @@ class routes
 
         $routes[] = $route;
 
-        //registering a new user
+        //registering new user
 
         $route = new route();
 

@@ -1,81 +1,127 @@
-<!doctype html>
+<?php include 'headerPage.php' ?>
 
-<html lang="en">
-<head>
-    <meta charset="utf-8">
 
-    <title>My Final Project</title>
-
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
-</head>
-
-<body>
 
 <?php
-//this is how you print something  $data contains the record that was selected on the table.
-//print_r($data);
+
+session_start();
+
 ?>
 
-<form action="index.php?page=accounts&action=logout" method="post" id="form3">
-	<button type="submit" form="form3" value="logout">Logout</button>
-</form>
+<div class="content-inner">
 
+    <!-- Page Header-->
 
-<form action="index.php?page=tasks&action=update&id=<?php echo $data->id; ?> " method="post" id="form1">
-	<label><b>Owner Email</b></label>
-		<input type="text" name="owneremail" value="<?php echo $data->owneremail; ?>" required></br></br>
+    <div class="content-inner">
 
-<label><b>Owner ID</b></label>
+        <!-- Page Header-->
 
-<input type="text" name="ownerid" value="<?php echo $data->ownerid; ?>"></br></br>
+        <header class="page-header">
 
+            <div class="container-fluid">
 
+                <h2 class="no-margin-bottom">Edit Task</h2>
 
-<label><b>Created Date</b></label>
+            </div>
 
-<input type="text" name="createddate" value="<?php echo $data->createddate; ?>"></br></br>
+        </header>
 
+        <!-- Breadcrumb-->
 
+        <div class="breadcrumb-holder container-fluid">
 
-<label><b>Due Date</b></label>
+            <ul class="breadcrumb">
 
-<input type="text" name="duedate" value="<?php echo $data->duedate; ?>"></br></br>
+                <li class="breadcrumb-item"><a href="index.php?page=tasks&action=allOneUser&id=<?php echo $_SESSION["userID"] ?>"">Home</a></li>
 
+                <li class="breadcrumb-item active">Forms</li>
 
+            </ul>
 
-<label><b>Message</b></label>
+        </div>
 
-<input type="text" name="message" value="<?php echo $data->message; ?>"></br></br>
-
-
-
-<label><b>isDone</b></label>
-
-<input type="text" name="isdone" value="<?php echo $data->isdone; ?>" ></br></br>
+        <!-- Dashboard Counts Section-->
 
 
 
+        <!-- Dashboard Header Section    -->
+
+        <section class="dashboard-header">
+
+            <div class="container-fluid">
+
+                <div class="row">
 
 
-    <button type="submit" form="form1" value="delete">Update</button>
 
-</form>
+                    <?php
 
+                    print utility\htmlTable::generateTableForOneTodo($data);
 
-
-
-
-<form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form2">
-	<button type="submit" form="form2" value="delete">Delete</button>
-
-</form>
+                    ?>
 
 
+
+                    <form action="index.php?page=tasks&action=edit&id=<?php echo $data->id; ?> " method="post" id="form1" style="float:left;">
+
+                        <div class="col-lg-10"><button class="btn btn-primary text-center" type="submit" form="form1" value="edit">Edit</button></div>
+
+                    </form>
+
+
+
+
+
+                    <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form2" style="float:right;">
+
+                        <div class="" ><button class="btn btn-primary" type="submit" form="form2" value="delete">Delete</button><a href="index.php?page=tasks&action=allOneUser&id=<?php echo $_SESSION["userID"] ?>">Cancel</a></div>
+
+                    </form>
+
+
+
+
+
+                </div>
+
+            </div>
+
+    </div>
+
+
+
+    <footer class="main-footer">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+
+                    <p>2017</p>
+
+                </div>
+
+                <div class="col-sm-6 text-right">
+
+                    <p>Saniya Anand</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</div>
+
+</div>
+
+</div>
 
 <script src="js/scripts.js"></script>
+
 </body>
+
 </html>

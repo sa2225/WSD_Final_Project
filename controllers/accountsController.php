@@ -1,7 +1,15 @@
 <?php
 
 /**
-*
+
+ * Created by PhpStorm.
+
+ * User: kwilliams
+
+ * Date: 11/27/17
+
+ * Time: 5:32 PM
+
  */
 
 //each page extends controller and the index.php?page=tasks causes the controller to be called
@@ -40,7 +48,7 @@ class accountsController extends http\controller
 
     {
 
-        self::getTemplate('new_user');
+        self::getTemplate('New_User');
 
     }
 
@@ -61,8 +69,6 @@ class accountsController extends http\controller
     //USE THE ABOVE TO SEE HOW TO USE Bcrypt
 
     $user = accounts::findUserbyUsername($_REQUEST['email']);
-
-
 
     if ($user == FALSE) {
 
@@ -94,15 +100,9 @@ class accountsController extends http\controller
 
     else{
 
-        echo 'Sorry, this email is already registered';
+        echo 'Sorry! This email is already registered.Please try with new one!';
 
     }
-
-
-
-
-
-
 
 }
 
@@ -142,7 +142,9 @@ class accountsController extends http\controller
 
         session_start();
 
-        header('Location: index.php?page=accounts&action=showProf');
+        
+
+        self::getTemplate('show_account', $record);
 
     }
 
@@ -163,7 +165,6 @@ class accountsController extends http\controller
     {
 
         session_start();
-
         $record = accounts::findOne($_SESSION['userID']);
 
         self::getTemplate('show_account', $record);
@@ -178,7 +179,7 @@ class accountsController extends http\controller
 
         $record = accounts::findOne($_SESSION['userID']);
 
-        self::getTemplate('password_change', $record);
+        self::getTemplate('Password_change', $record);
 
     }
 
@@ -210,15 +211,13 @@ class accountsController extends http\controller
 
         }else{
 
-            echo 'Incorrect password entered.';
+            echo 'Wrong password entered.';
 
         }
 
-
-
     }
 
-    //this is to login, here is where you find the account and allow login or deny.
+    //this is to login, here is where you find the account and allow Login or deny.
 
     public static function login()
 
@@ -250,7 +249,7 @@ class accountsController extends http\controller
 
             //header('Location: index.php');
 
-            print_r("<h2>'Sorry! This user is not found'</h2>");
+            print_r("<h1>'Sorry! User not found,Please enter correct Login credentials....!'</h1>");
 
         } else {
 
@@ -272,7 +271,7 @@ class accountsController extends http\controller
 
                 //header('Location: index.php');
 
-                print_r("<h2>'Sorry! You have entered incorrect password'</h2>");
+                print_r("<h1>'Sorry! You have entered wrong password....!'</h1>");
 
             }
 

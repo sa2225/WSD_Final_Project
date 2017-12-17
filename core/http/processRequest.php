@@ -1,6 +1,6 @@
 <?php
 namespace http;
-
+//by using the use here you don't have to put http on each class in that namespace
 class processRequest
 {
     //this is the main function of the program to calculate the response to a get or post request
@@ -26,10 +26,6 @@ class processRequest
         $request_method = request::getRequestMethod();
         $page = request::getPage();
         $action = request::getAction();
-        //these are helpful for figuring out the action and method being requested
-        //echo 'Action: ' . $action . '</br>';
-        //echo 'Page: ' . $page . '</br>';
-        //echo 'Request Method: ' . $request_method . '</br>';
         //this gets the routes objects, you need to add routes to add pages and follow the template of the route specified
         $routes = \routes::getRoutes();
         $foundRoute = NULL;
@@ -48,3 +44,4 @@ class processRequest
         }
     }
 }
+?>

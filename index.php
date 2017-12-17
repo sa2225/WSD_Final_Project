@@ -1,10 +1,12 @@
 <?php
 
+
+
 //turn on debugging messages
 
-ini_set('display_errors', 'On');
+/*ini_set('display_errors', 'On');
 
-error_reporting(E_ALL);
+error_reporting(E_ALL);*/
 
 //Autoloader class to load all the different directories
 

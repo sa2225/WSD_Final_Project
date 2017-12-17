@@ -1,15 +1,18 @@
 <?php
+
 namespace database;
+
 abstract class model
+
 {
-  public function save()
+
+    public function save()
 
     {
-      if ($this->id != '') {
+
+        if ($this->id != '') {
 
             $sql = $this->update();
-
-			$INSERT=FALSE;
 
         } else {
 
@@ -24,23 +27,29 @@ abstract class model
         $statement = $db->prepare($sql);
 
         $array = get_object_vars($this);
-        
+
         if ($INSERT == TRUE) {
 
-          unset($array['id']);
-    }
-    
-    foreach (array_flip($array) as $key => $value) {
+            unset($array['id']);
 
-        $statement->bindParam(":$value", $this->$value);
-    }
+        }
+
+        foreach (array_flip($array) as $key => $value) {
+
+            $statement->bindParam(":$value", $this->$value);
+
+        }
 
         $statement->execute();
 
         if ($INSERT == TRUE) {
+
             $this->id = $db->lastInsertId();
+
         }
+
         return $this->id;
+
     }
 
     private function insert()
@@ -65,7 +74,7 @@ abstract class model
 
     }
 
-     private function update()
+    private function update()
 
     {
 
@@ -74,8 +83,8 @@ abstract class model
         $tableName = $modelName::getTablename();
 
         $array = get_object_vars($this);
-    
-         $comma = " ";
+
+        $comma = " ";
 
         $sql = 'UPDATE ' . $tableName . ' SET ';
 
